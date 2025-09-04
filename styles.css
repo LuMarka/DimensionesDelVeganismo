@@ -1,0 +1,142 @@
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f0f4f8;
+}
+
+.chart-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 320px;
+    max-height: 400px;
+}
+
+@media (min-width: 768px) {
+    .chart-container {
+        height: 350px;
+    }
+}
+
+.stat-card {
+    background-color: #073B4C;
+    color: white;
+}
+
+.flow-arrow {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.flow-arrow::after {
+    content: '▼';
+    font-size: 2rem;
+    color: #118AB2;
+}
+
+.texto-gral {
+    margin: 80px 0;
+}
+
+/* === Estilos base para tablas === */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+/* === Responsividad === */
+
+/* Celulares chicos (≤ 480px) */
+@media (max-width: 480px) {
+    .texto-gral {
+        padding: 20px;
+        margin: 20px 0;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+        font-size: 12px; /* tipografía más chica */
+        -webkit-overflow-scrolling: touch;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+}
+
+/* Tablets y pantallas medianas (481px – 768px) */
+@media (max-width: 768px) {
+    .texto-gral {
+        padding: 20px 60px;
+        margin: 30px 0;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+        font-size: 14px;
+        -webkit-overflow-scrolling: touch;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    th, td {
+        padding: 10px;
+    }
+}
+
+/* Laptops chicas y pantallas intermedias (769px – 1020px) */
+@media (max-width: 1020px) {
+    #antibioticsChart,
+    #emissionsChart,
+    #resourceChart {
+        max-width: 80%;
+    }
+
+    table {
+        font-size: 15px;
+    }
+}
+
+/* Escritorios grandes (≥ 1021px) */
+@media (min-width: 1021px) {
+    table {
+        font-size: 16px;
+    }
+}
+/* === Corregir enlaces largos en lista de referencias === */
+#obras-citadas ul {
+    font-size: 12px;
+    flex-wrap: wrap;
+    padding-left: 20px;
+    list-style-position: outside;
+}
+
+#obras-citadas ul li a {
+    text-decoration: none;
+    color: #007BFF;
+    /* --- Fix enlaces largos --- */
+    white-space: normal;          /* que pueda saltar de línea */
+    overflow-wrap: anywhere;      /* permite cortar en cualquier parte */
+    word-break: break-all;       /* compatibilidad */
+    max-width: 100%;              /* no se sale del contenedor */
+    display: inline-block;        /* para respetar el ancho del padre */
+    line-height: 1.4;             /* mejor legibilidad */
+}
